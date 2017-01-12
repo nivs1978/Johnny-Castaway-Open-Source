@@ -200,6 +200,7 @@ namespace SCRANTIC
       {
         if (!previewMode)
         {
+          System.Threading.Thread.Sleep(1000);
           // Run main screensaver
           playRandomADS();
         }

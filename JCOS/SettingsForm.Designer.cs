@@ -60,25 +60,23 @@ namespace SCRANTIC
       // btnAddHour
       // 
       this.btnAddHour.Font = new System.Drawing.Font("Webdings", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-      this.btnAddHour.Location = new System.Drawing.Point(107, 16);
+      this.btnAddHour.Location = new System.Drawing.Point(80, 9);
       this.btnAddHour.Margin = new System.Windows.Forms.Padding(0);
       this.btnAddHour.Name = "btnAddHour";
-      this.btnAddHour.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
-      this.btnAddHour.Size = new System.Drawing.Size(20, 22);
+      this.btnAddHour.Size = new System.Drawing.Size(15, 22);
       this.btnAddHour.TabIndex = 0;
       this.btnAddHour.Text = "5";
-      this.btnAddHour.TextAlign = System.Drawing.ContentAlignment.TopCenter;
       this.btnAddHour.UseVisualStyleBackColor = true;
       // 
       // btnSubHour
       // 
       this.btnSubHour.Font = new System.Drawing.Font("Webdings", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
       this.btnSubHour.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-      this.btnSubHour.Location = new System.Drawing.Point(107, 38);
+      this.btnSubHour.Location = new System.Drawing.Point(80, 31);
       this.btnSubHour.Margin = new System.Windows.Forms.Padding(0);
       this.btnSubHour.Name = "btnSubHour";
       this.btnSubHour.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
-      this.btnSubHour.Size = new System.Drawing.Size(20, 22);
+      this.btnSubHour.Size = new System.Drawing.Size(15, 22);
       this.btnSubHour.TabIndex = 1;
       this.btnSubHour.Text = "6";
       this.btnSubHour.UseVisualStyleBackColor = true;
@@ -86,18 +84,20 @@ namespace SCRANTIC
       // lblStartOfDayText
       // 
       this.lblStartOfDayText.AutoSize = true;
-      this.lblStartOfDayText.Location = new System.Drawing.Point(19, 28);
+      this.lblStartOfDayText.Location = new System.Drawing.Point(14, 23);
+      this.lblStartOfDayText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
       this.lblStartOfDayText.Name = "lblStartOfDayText";
-      this.lblStartOfDayText.Size = new System.Drawing.Size(81, 17);
+      this.lblStartOfDayText.Size = new System.Drawing.Size(61, 13);
       this.lblStartOfDayText.TabIndex = 2;
       this.lblStartOfDayText.Text = "Start of day";
       // 
       // lblStartOfDay
       // 
       this.lblStartOfDay.AutoSize = true;
-      this.lblStartOfDay.Location = new System.Drawing.Point(136, 28);
+      this.lblStartOfDay.Location = new System.Drawing.Point(102, 23);
+      this.lblStartOfDay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
       this.lblStartOfDay.Name = "lblStartOfDay";
-      this.lblStartOfDay.Size = new System.Drawing.Size(59, 17);
+      this.lblStartOfDay.Size = new System.Drawing.Size(45, 13);
       this.lblStartOfDay.TabIndex = 3;
       this.lblStartOfDay.Text = "9:00 am";
       this.lblStartOfDay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -105,9 +105,10 @@ namespace SCRANTIC
       // ckhLoadBackground
       // 
       this.ckhLoadBackground.AutoSize = true;
-      this.ckhLoadBackground.Location = new System.Drawing.Point(65, 68);
+      this.ckhLoadBackground.Location = new System.Drawing.Point(55, 55);
+      this.ckhLoadBackground.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.ckhLoadBackground.Name = "ckhLoadBackground";
-      this.ckhLoadBackground.Size = new System.Drawing.Size(142, 21);
+      this.ckhLoadBackground.Size = new System.Drawing.Size(111, 17);
       this.ckhLoadBackground.TabIndex = 4;
       this.ckhLoadBackground.Text = "&Load Background";
       this.ckhLoadBackground.UseVisualStyleBackColor = true;
@@ -115,9 +116,10 @@ namespace SCRANTIC
       // chkPassword
       // 
       this.chkPassword.AutoSize = true;
-      this.chkPassword.Location = new System.Drawing.Point(65, 95);
+      this.chkPassword.Location = new System.Drawing.Point(55, 77);
+      this.chkPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.chkPassword.Name = "chkPassword";
-      this.chkPassword.Size = new System.Drawing.Size(91, 21);
+      this.chkPassword.Size = new System.Drawing.Size(72, 17);
       this.chkPassword.TabIndex = 5;
       this.chkPassword.Text = "&Password";
       this.chkPassword.UseVisualStyleBackColor = true;
@@ -125,9 +127,10 @@ namespace SCRANTIC
       // chkSounds
       // 
       this.chkSounds.AutoSize = true;
-      this.chkSounds.Location = new System.Drawing.Point(65, 122);
+      this.chkSounds.Location = new System.Drawing.Point(55, 99);
+      this.chkSounds.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.chkSounds.Name = "chkSounds";
-      this.chkSounds.Size = new System.Drawing.Size(78, 21);
+      this.chkSounds.Size = new System.Drawing.Size(62, 17);
       this.chkSounds.TabIndex = 6;
       this.chkSounds.Text = "&Sounds";
       this.chkSounds.UseVisualStyleBackColor = true;
@@ -137,18 +140,19 @@ namespace SCRANTIC
       this.pbLogo.BackColor = System.Drawing.Color.Black;
       this.pbLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.pbLogo.Image = global::SCRANTIC.Properties.Resources.LOGO;
-      this.pbLogo.Location = new System.Drawing.Point(22, 88);
+      this.pbLogo.Location = new System.Drawing.Point(16, 72);
       this.pbLogo.Margin = new System.Windows.Forms.Padding(0);
       this.pbLogo.Name = "pbLogo";
-      this.pbLogo.Size = new System.Drawing.Size(34, 34);
+      this.pbLogo.Size = new System.Drawing.Size(32, 32);
       this.pbLogo.TabIndex = 7;
       this.pbLogo.TabStop = false;
       // 
       // btnOK
       // 
-      this.btnOK.Location = new System.Drawing.Point(22, 150);
+      this.btnOK.Location = new System.Drawing.Point(16, 122);
+      this.btnOK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.btnOK.Name = "btnOK";
-      this.btnOK.Size = new System.Drawing.Size(80, 28);
+      this.btnOK.Size = new System.Drawing.Size(60, 23);
       this.btnOK.TabIndex = 8;
       this.btnOK.Text = "&OK";
       this.btnOK.UseVisualStyleBackColor = true;
@@ -156,9 +160,10 @@ namespace SCRANTIC
       // 
       // btnCancel
       // 
-      this.btnCancel.Location = new System.Drawing.Point(127, 150);
+      this.btnCancel.Location = new System.Drawing.Point(95, 122);
+      this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.btnCancel.Name = "btnCancel";
-      this.btnCancel.Size = new System.Drawing.Size(80, 28);
+      this.btnCancel.Size = new System.Drawing.Size(60, 23);
       this.btnCancel.TabIndex = 9;
       this.btnCancel.Text = "&Cancel";
       this.btnCancel.UseVisualStyleBackColor = true;
@@ -166,9 +171,9 @@ namespace SCRANTIC
       // 
       // SettingsForm
       // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(220, 189);
+      this.ClientSize = new System.Drawing.Size(170, 154);
       this.Controls.Add(this.btnCancel);
       this.Controls.Add(this.btnOK);
       this.Controls.Add(this.pbLogo);
@@ -180,6 +185,7 @@ namespace SCRANTIC
       this.Controls.Add(this.btnSubHour);
       this.Controls.Add(this.btnAddHour);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+      this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "SettingsForm";

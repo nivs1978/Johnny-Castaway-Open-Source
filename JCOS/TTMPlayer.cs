@@ -32,7 +32,7 @@ namespace SCRANTIC
     private const int MAX_IMAGE_SLOTS   = 10;
     private const int MAX_PALETTE_SLOTS = 10;
 
-    //private UInt16 currFrame;
+    private UInt16 currFrame;
     private UInt16 currImage;
     //private UInt16 currPalette;
     //private UInt16 currChunk;
@@ -188,9 +188,13 @@ namespace SCRANTIC
               break;
             }
           case Instruction.SET_FRAME0:
+            {
+              currFrame = mc.data[1];
+              break;
+            }
           case Instruction.SET_FRAME1:
             {
-              //currFrame = mc.data[1];
+              currFrame = mc.data[1];
               break;
             }
           case Instruction.FADE_OUT:
@@ -205,6 +209,16 @@ namespace SCRANTIC
               break;
             }
           case Instruction.SAVE_IMAGE0:
+            {
+              xSavedImage = mc.data[0];
+              ySavedImage = mc.data[1];
+              savedImage = new Bitmap(mc.data[2], mc.data[3]);
+              Graphics gr = Graphics.FromImage(savedImage);
+              //Bitmap screen = new Bitmap(640, 480, g);
+              gr.DrawImage(screen, 0, 0, new Rectangle(xSavedImage, ySavedImage, savedImage.Width, savedImage.Height), GraphicsUnit.Pixel);
+              savedImageDrawn = false;
+              break;
+            }
           case Instruction.SAVE_IMAGE1:
             {
               xSavedImage = mc.data[0];
@@ -214,6 +228,7 @@ namespace SCRANTIC
               //Bitmap screen = new Bitmap(640, 480, g);
               gr.DrawImage(screen, 0, 0, new Rectangle(xSavedImage, ySavedImage, savedImage.Width, savedImage.Height), GraphicsUnit.Pixel);
               savedImageDrawn = false;
+              //g.DrawRectangle(new Pen(Color.Blue), xSavedImage, ySavedImage, savedImage.Width, savedImage.Height);
               break;
             }
           case Instruction.DRAW_WHITE_LINE:
@@ -231,6 +246,8 @@ namespace SCRANTIC
               int y = mc.data[1];
               int width = mc.data[2];
               int height = mc.data[3];
+              g.DrawRectangle(new Pen(Color.Cyan), x, y, width, height);
+              g.Save();
               g.Clip = new Region(new RectangleF(x, y, width, height));
               break;
             }
@@ -248,6 +265,15 @@ namespace SCRANTIC
             }
           case Instruction.SET_WINDOW1:
             {
+              int x1 = mc.data[0];
+              int y1 = mc.data[1];
+              int x2 = mc.data[2];
+              int y2 = mc.data[3];
+              int width = x2 - x1;
+              int height = y2 - y1;
+              g.DrawRectangle(new Pen(Color.Cyan), x1, x2, width, height);
+              g.Save();
+              g.Clip = new Region(new RectangleF(x1, y1, width, height));
               break;
             }
           case Instruction.DRAW_SPRITE0:
