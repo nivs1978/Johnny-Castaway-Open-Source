@@ -18,6 +18,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using System.Diagnostics;
 
 namespace SCRANTIC
 {
@@ -30,6 +31,7 @@ namespace SCRANTIC
       lock (_lock)
       {
         File.AppendAllText(LOGFILE, text + "\r\n");
+        Debug.WriteLine(text);
       }
     }
   }

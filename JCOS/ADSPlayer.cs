@@ -105,6 +105,8 @@ namespace SCRANTIC
         //Debug.WriteLine(rp.id.ToString("X4") + "\t" + rp.name);
         Resource.TTM ttm = (Resource.TTM)ResourceManager.get(rp.name);
         TTMPlayer ttmplayer = new TTMPlayer(ttm, screen);
+        //ttmplayer.Log += new TTMPlayer.LogEvent(LogT);
+
         //ttmplayer.bw.RunWorkerCompleted += bw_RunWorkerCompleted;
         ttmplayer.bw.ProgressChanged += bw_ProgressChanged;
         ttms.Add(rp.id, ttmplayer);
@@ -117,6 +119,8 @@ namespace SCRANTIC
     
     public void playAndWait(TTMPlayer ttmplayer, UInt16 instructionno)
     {
+      while (ttmplayer.bw.IsBusy)
+        System.Threading.Thread.Sleep(20);
       ttmplayer.bw.RunWorkerAsync(instructionno);
       System.Threading.Thread.Sleep(20);
       while (ttmplayer.Playing)
@@ -149,6 +153,7 @@ namespace SCRANTIC
 
     public void runADS(UInt16 no)
     {
+      Log.write("Running ADS script "+no);
       bwads.RunWorkerAsync(no);
     }
 

@@ -26,6 +26,8 @@ namespace SCRANTIC
     private static Dictionary<string, Resource.Resource> resources = new Dictionary<string, Resource.Resource>(StringComparer.CurrentCultureIgnoreCase);
     private static string resourcemap = "C:\\SIERRA\\SCRANTIC\\RESOURCE.MAP";
 
+//    public List<string> getADSResources
+
     public static Resource.Resource get(string name)
     {
       if (resources.ContainsKey(name.ToLower()))

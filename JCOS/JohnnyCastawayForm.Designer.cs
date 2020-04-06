@@ -45,41 +45,31 @@ namespace SCRANTIC
     private void InitializeComponent()
     {
       this.pbScreen = new System.Windows.Forms.PictureBox();
-      this.lbLog = new System.Windows.Forms.ListBox();
       ((System.ComponentModel.ISupportInitialize)(this.pbScreen)).BeginInit();
       this.SuspendLayout();
       // 
       // pbScreen
       // 
-      this.pbScreen.Location = new System.Drawing.Point(125, 129);
+      this.pbScreen.Location = new System.Drawing.Point(94, 105);
+      this.pbScreen.Margin = new System.Windows.Forms.Padding(2);
       this.pbScreen.Name = "pbScreen";
-      this.pbScreen.Size = new System.Drawing.Size(640, 480);
+      this.pbScreen.Size = new System.Drawing.Size(480, 390);
       this.pbScreen.TabIndex = 1;
       this.pbScreen.TabStop = false;
       // 
-      // lbLog
-      // 
-      this.lbLog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-      this.lbLog.FormattingEnabled = true;
-      this.lbLog.ItemHeight = 16;
-      this.lbLog.Location = new System.Drawing.Point(0, 0);
-      this.lbLog.Name = "lbLog";
-      this.lbLog.Size = new System.Drawing.Size(284, 260);
-      this.lbLog.TabIndex = 2;
-      this.lbLog.Visible = false;
-      // 
       // JohnnyCastawayForm
       // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.Color.Black;
-      this.ClientSize = new System.Drawing.Size(282, 255);
-      this.Controls.Add(this.lbLog);
+      this.ClientSize = new System.Drawing.Size(640, 480);
       this.Controls.Add(this.pbScreen);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+      this.Margin = new System.Windows.Forms.Padding(2);
       this.Name = "JohnnyCastawayForm";
       this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
       this.Text = "Form1";
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.JohnnyCastawayForm_FormClosing);
       this.Load += new System.EventHandler(this.JohnnyCastawayForm_Load);
       this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.JohnnyCastawayForm_KeyPress);
       this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.JohnnyCastawayForm_MouseClick);
@@ -92,7 +82,6 @@ namespace SCRANTIC
     #endregion
 
     private System.Windows.Forms.PictureBox pbScreen;
-    private System.Windows.Forms.ListBox lbLog;
   }
 }
 

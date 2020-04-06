@@ -42,6 +42,7 @@ namespace SCRANTIC
      { new KeyValuePair<string, List<UInt16>>("MISCGAG.ADS", new List<UInt16>() { 0x01 } ) },
      { new KeyValuePair<string, List<UInt16>>("ACTIVITY.ADS", new List<UInt16>() { 0x01, 0x0C, 0x06, 0x08, 0x09/*,2,3,4,5,6,7,8*/} )  }
     };
+    Bitmap lastImage = null;
 
     private Point mouseLocation;
     private Random rand = new Random();
@@ -72,6 +73,7 @@ namespace SCRANTIC
     {
       InitializeComponent();
       this.Bounds = Bounds;
+      pbScreen.Location = new Point(0, 0);
     }
 
     public JohnnyCastawayForm(IntPtr PreviewWndHandle)
@@ -145,20 +147,22 @@ namespace SCRANTIC
         Thread.Sleep(25);
         bwintro.ReportProgress(0, new Bitmap(introbmp));
       }
+      System.Threading.Thread.Sleep(1000);
     }
 
     private void bwintro_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
     {
       count++;
-      lbLog.Items.Add(count.ToString());
-      lbLog.SelectedIndex = (lbLog.Items.Count - 1);
-      lbLog.SelectedIndex = -1; 
-      pbScreen.Image = (Bitmap)e.UserState;
+      if (lastImage != null)
+        lastImage.Dispose();
+      lastImage = (Bitmap)e.UserState;
+      pbScreen.Image = lastImage;
     }
 
     public void updateImage(object sender, ADSPlayer.BitmapEventArgs e)
     {
       latest = e.Image;
+      //long time = DateTime.Now.Ticks
       pbScreen.Image = (Bitmap)e.Image;
     }
 
@@ -178,7 +182,12 @@ namespace SCRANTIC
       int scriptidx = random.Next(scenes[sceneidx].Value.Count);
       Log.write("Playing " + adsname + " sequence " + scriptidx);
       UInt16 scriptno = scenes[sceneidx].Value[scriptidx];
-      ADS ads = (ADS)ResourceManager.get(adsname);
+      string[] adsfiles = new string[] { "ACTIVITY.ADS","BUILDING.ADS","FISHING.ADS","JOHNNY.ADS","MARY.ADS","MISCGAG.ADS","STAND.ADS","SUZY.ADS","VISITOR.ADS","WALKSTUF.ADS" };
+            foreach (string a in adsfiles)
+            {
+                ADS ads1 = (ADS)ResourceManager.get(a);
+            }
+            ADS ads = (ADS)ResourceManager.get(adsname);
       ADSPlayer player = new ADSPlayer(ads);
       player.UpdateEvent += updateImage;
       player.CompleteEvent += complete;
@@ -254,6 +263,11 @@ namespace SCRANTIC
           doExit();
       }
       mouseLocation = e.Location;
+     }
+
+    private void JohnnyCastawayForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+      doExit();
     }
 
   }
