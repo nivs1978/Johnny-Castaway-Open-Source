@@ -23,56 +23,58 @@ using System.Windows.Forms;
 namespace SCRANTIC
 {
 
-  class FileParser
-  {
-//    private byte[] data;
-    private DataParser parser;
-
-    public FileParser(string filename)
+    class FileParser
     {
-      if (File.Exists(filename))
-        parser = new DataParser(System.IO.File.ReadAllBytes(filename));
-      else
-      {
-        MessageBox.Show("File not found: " + filename, "Johnny Castaway Open Source");
-        throw new Exception("Unable to read file: " + filename);
-      }
-    }
+        //    private byte[] data;
+        private DataParser parser;
 
-    public void setOffset(UInt32 o)
-    {
-      parser.setOffset(o);
-    }
+        public FileParser(string filename)
+        {
+            if (File.Exists(filename))
+            {
+                parser = new DataParser(System.IO.File.ReadAllBytes(filename));
+            }
+            else
+            {
+                MessageBox.Show("File not found: " + filename, "Johnny Castaway Open Source");
+                throw new Exception("Unable to read file: " + filename);
+            }
+        }
 
-    public byte getByte()
-    {
-      return parser.getByte();
-    }
+        public void setOffset(UInt32 o)
+        {
+            parser.setOffset(o);
+        }
 
-    public byte[] getBytes(UInt32 count)
-    {
-      return parser.getBytes(count);
-    }
+        public byte getByte()
+        {
+            return parser.getByte();
+        }
 
-    public UInt16 getWord()
-    {
-      return parser.getWord();
-    }
+        public byte[] getBytes(UInt32 count)
+        {
+            return parser.getBytes(count);
+        }
 
-    public UInt32 getDWord()
-    {
-      return parser.getDWord();
-    }
+        public UInt16 getWord()
+        {
+            return parser.getWord();
+        }
 
-    public string getString()
-    {
-      return parser.getString();
-    }
+        public UInt32 getDWord()
+        {
+            return parser.getDWord();
+        }
 
-    public string getStringBlock(int length)
-    {
-      return parser.getStringBlock(length);
-    }
+        public string getString()
+        {
+            return parser.getString();
+        }
 
-  }
+        public string getStringBlock(int length)
+        {
+            return parser.getStringBlock(length);
+        }
+
+    }
 }
