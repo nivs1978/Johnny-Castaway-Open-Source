@@ -7,7 +7,7 @@ To make the screensaver work the original resources files has to be present in t
 JCOSInstaller - WiX installer project
 WiX Toolkit 3.9 has been used for the installer project
 
-JCOSWebSite - The website currently hosted at http://nivs.dk/jc
-Simple html page, no fancy javascript, styles or .net code
+JCOSWebSite - Not currently hosted
+Simple html page that present the project, no fancy javascript, styles or .net code
 
 If you want to help me with this project, contact me at nivs1978@gmail.com
